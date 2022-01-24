@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap');
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-family: 'The Nautigal', cursive;
+    color: #D39541;
+    font-size: 18vh;
+    text-shadow: 2px 1px 2px rgba(255, 255, 255, 0.938);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+}
+
+h3 {
+    color: #D39541;
+    font-size: 3vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    margin-top: 5em;
+    white-space: nowrap;
+}
+
+.imgs {
+    position: absolute;
+    bottom: 4%;
+    right: 3%;
+    margin: 0;
+    display: flex;
+    height: 4vh;
+}
+
+.imgs img{
+    padding: 5px;
+}
+
+.titleImg {
+    position: relative;
+    opacity: .7;
+    margin: 0;
+    padding: 0;
+    width: 45vh;
+    height: auto;
+    left: 50%;
+}
+
+.title {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+/* 
+.tacheClass {
+    position: absolute;
+    bottom: 0; right: 0;
+}
+
+.tache {
+    position: absolute;
+    opacity: .9;
+    height: auto;
+    transform: rotate(-90deg);
+}
+ */
+

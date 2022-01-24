@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,800;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+    z-index: 100;
+    transition: 0.6s;
+}
+
+header .logo {
+    height: 6vh;
+    object-fit: cover;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    align-items: center;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.content h2 {
+    color: #fff;
+    font-size: 2.5em;
+}
+
+
+/* BURGER BUTTON - BEGIN*/
+.menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #D39541;
+    transition: all .5s ease-in-out;
+}
+
+.burger::before, 
+.burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #D39541;
+    transition: all .5s ease-in-out;
+
+}
+
+.burger::before {
+    transform: translateY(-16px);
+}
+
+.burger::after {
+    transform: translateY(16px);
+}
+/* BURGER BUTTON - END*/
+
+/* ANIMATION BURGER BUTTON - BEGIN*/
+.menuOpen .burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menuOpen .burger::before {
+    transform: rotate(45deg) translate(35px, -35px)
+}
+
+.menuOpen .burger::after {
+    transform: rotate(-45deg) translate(35px, 35px)
+}
+
+.menuOpen .logo {
+    opacity: 0;
+}
+
+/* ANIMATION BURGER BUTTON - END*/
+
+
+/* NAVIGATION - BEGIN */
+
+.nav {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    overflow: hidden;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.img {
+    opacity: 0;
+}
+/* 
+.nav-overlay {
+    content: '';
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 0%;
+    height: 0vh;
+    background: #D39541;
+    border-radius: 0% 0% 0% 30%;
+    transition: width 500ms ease-in-out 230ms,
+                height 500ms ease-in-out 230ms,
+                border-radius 300ms ease-in-out 30ms;
+} */
+
+.menuOpen .nav {
+    transition: .5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* .menuOpen .nav-overlay {
+    width: 100%;
+    height: 100vh;
+    transition: .3s;
+} */
+
+.nav .links {
+    margin-left: 10%;
+}
+.nav .links .link {
+    position: relative;
+    margin: 20px;
+    font-size: 8em;
+    letter-spacing: 1%;
+    text-align: left;
+    left: -300%;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.nav .links .link a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0);
+    font-weight: 1000;
+    transition: all 300ms ease-in-out;
+    z-index: 1;
+    -webkit-text-stroke: 1px white;
+}
+
+.menuOpen .nav .link {
+    left: 0px;
+}
+
+.menuOpen .nav .links > div:nth-child(1){
+    transition: left 300ms ease-in-out 350ms;
+}
+.menuOpen .nav .links > div:nth-child(2){
+    transition: left 300ms ease-in-out 450ms;
+}
+.menuOpen .nav .links > div:nth-child(3){
+    transition: left 300ms ease-in-out 550ms;
+}
+.menuOpen .nav .links > div:nth-child(4){
+    transition: left 300ms ease-in-out 650ms;
+}
+
+.menuOpen .nav .link .img {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    height: 50vh;
+    max-height: 400px;
+    width: 400px;
+    opacity: 0;
+    left: -100%;
+    top: 50%;
+    transform: translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0);
+}
+
+.menuOpen .nav .link:hover .img {
+    opacity: 1;
+    z-index: 1;
+    transform: translate3d(calc(-100% + 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg);
+    transition: all 0.4s;
+}
+
+.menuOpen .nav .link:hover a{
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+        color: #e002964f;
+        text-shadow: none;
+    }
+    0%, 19%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+        color: #D39541;
+        text-shadow: 0 0 10px #e0ddd8,
+        0 0 20px #e0bb86,
+        0 0 40px #e0bb86,
+        0 0 80px #e0bb86,
+        0 0 160px #e0bb86;
+    }
+}
+
+/* NAVIGATION - END */
+
+
+.imgLink {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 60vh;
+    opacity: .7;
+}
+
+
